@@ -1,9 +1,6 @@
 name: JSON Check
 
 on:
-  push:
-    paths:
-      - '**.json'
   pull_request:
 
 jobs:
@@ -12,10 +9,11 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout Repository
-        uses: actions/checkout@v3
+      - uses: actions/checkout@v3
 
-      - name: json-syntax-check
-        uses: limitusus/json-syntax-check@v2
+      - name: Syntax Check
+        uses: larrrssss/json-syntax-checker@v1.0.0
         with:
-          pattern: '\\.json$'
+          workspace: ${{ github.workspace }}
+          base: '/'
+          check_recursively: true
