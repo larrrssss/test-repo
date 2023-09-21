@@ -1,3 +1,12 @@
 {
-  "hello_word": "Hello World"
+  "hello_word": "Hello World",
+  "invlaid": {
+    "valid_now": "asd"
+  },
+  "new_file": {
+    "new": "asd"
+  },
+  "test": {
+    "Hello": "asda"
+  }
 }
