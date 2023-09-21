@@ -9,11 +9,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout Repository
-        uses: actions/checkout@v3
-        with:
-          ref: ${{github.event.pull_request.head.ref}}          
-          fetch-depth: 0
+      - uses: actions/checkout@v3
 
       - name: JSON Syntax Check
         uses: limitusus/json-syntax-check@v2
