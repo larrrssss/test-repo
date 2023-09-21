@@ -11,7 +11,9 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
-      - name: JSON Syntax Check
-        uses: limitusus/json-syntax-check@v2
+      - name: Syntax Check
+        uses: larrrssss/json-syntax-checker@v1.0.0
         with:
-          pattern: '\\.json$'
+          workspace: ${{ github.workspace }}
+          base: '/'
+          check_recursively: true
