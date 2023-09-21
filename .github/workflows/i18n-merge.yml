@@ -6,8 +6,18 @@ on:
       - main
 
 jobs:
+  syntax_check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: json-syntax-check
+        uses: limitusus/json-syntax-check@v2
+        with:
+          pattern: "\\.json$"
+
   merge_i18n:
     name: Merge i18n translation files
+    needs: syntax_check
     runs-on: ubuntu-latest
 
     steps:
